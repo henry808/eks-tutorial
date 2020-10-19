@@ -1,0 +1,13 @@
+---
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: test-cluster
+  region: us-west-2
+  version: '1.18'  
+managedNodeGroups:
+- name: ng-linux
+  launchTemplate:
+    id: lt-01
+    version: "1"
