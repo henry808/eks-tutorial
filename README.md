@@ -47,6 +47,30 @@ Go to console and activate region (https://console.aws.amazon.com/iam/home?regio
 
 ### Create Cluster
 
+Note: Using EKS AMI: https://console.aws.amazon.com/systems-manager/parameters/%252Faws%252Fservice%252Feks%252Foptimized-ami%252F1.18%252Famazon-linux-2%252Frecommended%252Fimage_id/description?region=us-west-2#
+
+/aws/service/eks/optimized-ami/1.18/amazon-linux-2/recommended/image_id
+
+ami-04f0f3d381d07e0b6
+
+
+1. Create launch template
+
+```
+aws ec2 create-launch-template \
+    --version-description WebVersion1 \
+    --launch-template-name TemplateForEKS2 \
+    --tag-specifications 'ResourceType=launch-template,Tags=[{Key=testkey,Value=testval}]' \
+    --launch-template-data file://template/launch-config-basic.json \
+    --dry-run
+```
+
+Did not use because it throws an error::     --launch-template-name TemplateForEKS \
+
+2. Add launch config template id to test-eks-cluster.yaml. It will look like this: lt-0428d9790bd720765
+
+3. Create Cluster
+
 ```bash
 eksctl create cluster --config-file template/test-eks-cluster.yaml
 ```

@@ -9,5 +9,5 @@ metadata:
 managedNodeGroups:
 - name: ng-linux
   launchTemplate:
-    id: lt-01
+    id: lt-0428d9790bd720765
     version: "1"

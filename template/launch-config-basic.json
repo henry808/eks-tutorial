@@ -1,0 +1,17 @@
+{
+    "NetworkInterfaces": [{
+        "AssociatePublicIpAddress": true,
+        "DeviceIndex": 0,
+        "Ipv6AddressCount": 1,
+        "SubnetId": "subnet-3df00a77"
+    }],
+    "ImageId": "ami-04f0f3d381d07e0b6",
+    "InstanceType": "t2.micro",
+    "TagSpecifications": [{
+        "ResourceType": "instance",
+        "Tags": [{
+            "Key":"Name",
+            "Value":"webserver"
+        }]
+    }]
+}
